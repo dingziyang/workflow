@@ -2,7 +2,6 @@
 ### springboot2 + acticiti6 + 流程设计器 + thymeleaf3 + mysql5.7 + jdk1.8-x64 + druid
 - 这是一个单个maven的demo工程
 - config,filter,utils可以删掉，没影响
-
 - 步骤：
 1. 下载源码
 2. 修改```application.yml```中的数据库连接配置
@@ -11,7 +10,7 @@
 5. 项目访问路径为localhost:8999/wf, 也可以自己去配置，自己配置需要修改applica.yml，pom.xml，webapp\scripts\app-cfg.js这三个对应的地方
 6. ```mvn clean install -Dmaven.test.skip=true```
 7. 启动main方法
-8. 浏览器访问```localhost:8999/wf```
+8. 浏览器访问```localhost:8999/wf```，用户名admin，密码test
 
 ----------
 ## 但是我把这一套整合到公司项目就存在问题，所以发到git大家一起探讨
