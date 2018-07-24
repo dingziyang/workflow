@@ -1,0 +1,95 @@
+server:
+  port: 8999
+  tomcat:
+      uri-encoding: utf-8
+  servlet:
+    context-path: "/wf"
+spring:
+#  profiles:
+    #激活开发环境
+#    active: dev
+  servlet:
+    multipart:
+      max-file-size: 1MB
+  thymeleaf:
+    # 开启MVC Thymeleaf视图解析（默认值：true）
+    enabled: true
+    # 模板编码
+    encoding: utf-8
+    # 开启模板缓存（默认值：true）,强烈建议，开发模式下不开启缓存
+    cache: false
+    # 在渲染之前检查模板是否存在
+    check-template: true
+    # 检查模板位置是否正确（默认值:true）
+    check-template-location: true
+    # Content-Type的值（默认值：text/html）
+    servlet:
+      content-type: text/html
+    # 要运用于模板之上的模板模式。另见StandardTemplate-ModeHandlers(默认值：HTML5)
+    mode: HTML
+    # 在构建URL时添加到视图名称前的前缀（默认值：classpath:/templates/）,后缀(默认值.html)
+    prefix: classpath:/templates
+    suffix: .html
+
+  datasource:
+    name: activiti_wf
+    url: jdbc:mysql://localhost:3306/activiti6?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    maxOpenPreparedStatements: 20
+
+  jpa:
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: false
+    open-in-view: true
+    generate-ddl: false
+  liquibase:
+      enabled: true
+      change-log: classpath:activiti6/activiti-app-db-changelog.xml
+  freemarker:
+    check-template-location: false
+  activiti:
+    check-process-definitions: false
+    # 启动activiti engine时检查并更新数据库，不存在则创建表，存在则跳过
+    database-schema-update: "true"
+  aop:
+    proxy-target-class: false
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    dao: debug
+    org:
+      mybatis: debug
+# 暴露 actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# activiti6 临时文件存放处
+contentstorage:
+ fs:
+  rootFolder: "data/"
+  createRoot: true
+  depth: 4
+  blockSize: 1024
+
