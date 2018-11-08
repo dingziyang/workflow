@@ -13,7 +13,8 @@
 8. 浏览器访问```localhost:8999/wf```，用户名admin，密码test
 
 ## activiti-boot2相关maven包
-[百度网盘：密码 gm6g](https://pan.baidu.com/s/1jthmOhiuTPQiZFf7V8m5Zg)
+- [百度网盘：密码 gm6g](https://pan.baidu.com/s/1jthmOhiuTPQiZFf7V8m5Zg)
+
 
 ----------
 ## 这个版本的整合，全网独此一份！
