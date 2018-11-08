@@ -12,7 +12,7 @@
 7. 启动main方法
 8. 浏览器访问```localhost:8999/wf```，用户名admin，密码test
 
-## activiti-boot2相关maven包
+## activiti-boot2相关maven包（解压后放到本地maven仓库即可）
 - [百度网盘：密码 gm6g](https://pan.baidu.com/s/1jthmOhiuTPQiZFf7V8m5Zg)
 
 
